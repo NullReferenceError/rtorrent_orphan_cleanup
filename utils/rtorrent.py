@@ -1,5 +1,6 @@
 import logging
 import os
+import ssl
 
 from .xmlrpc import ServerProxy
 
@@ -7,9 +8,9 @@ log = logging.getLogger(__name__)
 
 
 class Rtorrent:
-    def __init__(self, url):
-        self.url = "%s/RPC2" % url
-        self.xmlrpc = ServerProxy(self.url)
+    def __init__(self, url, rpcPath):
+        self.url = url + rpcPath
+        self.xmlrpc = ServerProxy(self.url, context=ssl._create_unverified_context())
 
     def get_torrents(self):
         torrent_list = {}

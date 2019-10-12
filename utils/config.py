@@ -41,6 +41,7 @@ class Config:
 
         # CORE
         example_config['rutorrent']['url'] = 'https://user:pass@rutorrent.domain.com'
+        example_config['rutorrent']['rpcpath'] = '/RPC2'
         example_config['rutorrent']['download_folder'] = '/mnt/local/downloads/torrents/rutorrent/completed'
         example_config['rutorrent']['path_mappings'] = {
             '/mnt/local/downloads/torrents/': [

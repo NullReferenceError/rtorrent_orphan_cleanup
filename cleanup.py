@@ -102,7 +102,7 @@ if __name__ == "__main__":
              cfg.config['rutorrent']['download_folder'])
 
     # fetch torrent list
-    rtorrent = Rtorrent(cfg.config['rutorrent']['url'])
+    rtorrent = Rtorrent(cfg.config['rutorrent']['url'], cfg.config['rutorrent']['rpcpath'])
     torrents = rtorrent.get_torrents()
 
     if not len(torrents):
